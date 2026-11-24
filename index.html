@@ -1,0 +1,1317 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>溏心vlog视频 - 官方视频门户 | 记录真实生活的温柔影像</title>
+<meta name="description" content="溏心vlog视频官方网站，专注真实生活影像的原创视频品牌，记录日常、分享经验、连接创作者，打造温暖多元的内容社区。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23f6b93b'/%3E%3Cellipse cx='32' cy='34' rx='17' ry='13' fill='%23fff6e5'/%3E%3Cellipse cx='32' cy='34' rx='9' ry='8' fill='%23f08c00'/%3E%3Ccircle cx='18' cy='20' r='4' fill='%23fff6e5'/%3E%3Cpath d='M32 8l4 7h-8z' fill='%23e8590c'/%3E%3C/svg%3E">
+<style>
+:root{
+  --tx-amber:#f08c00;
+  --tx-amber-deep:#c76a00;
+  --tx-cream:#fffaf0;
+  --tx-paper:#fffdf7;
+  --tx-ink:#3a2c1a;
+  --tx-ink-soft:#6b5842;
+  --tx-line:#f0e2c8;
+  --tx-soft:#fdf3dd;
+  --tx-shadow:0 10px 28px rgba(150,100,20,.10);
+  --tx-radius:18px;
+  --tx-head-h:118px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--tx-head-h)}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  background:var(--tx-cream);
+  color:var(--tx-ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+.tx-wrap{width:min(1180px,92vw);margin:0 auto}
+.tx-skip{position:absolute;left:-9999px}
+.tx-skip:focus{left:12px;top:12px;background:#fff;padding:8px 14px;z-index:999;border-radius:8px}
+
+/* ============ 公告条 + 页头吸顶 ============ */
+.tx-sticky-top{position:sticky;top:0;z-index:120;box-shadow:0 2px 16px rgba(160,110,30,.10)}
+.tx-notice{
+  background:linear-gradient(90deg,#3a2c1a,#5c4526 60%,#7a5a20);
+  color:#ffeec6;font-size:13.5px;
+}
+.tx-notice-inner{
+  display:flex;align-items:center;gap:12px;
+  padding:8px 0;overflow:hidden;
+}
+.tx-notice-badge{
+  flex:none;background:var(--tx-amber);color:#2b1f0c;font-weight:700;
+  font-size:12px;padding:2px 10px;border-radius:999px;letter-spacing:.5px;
+}
+.tx-notice-track{display:flex;gap:44px;white-space:nowrap;overflow-x:auto;scrollbar-width:none}
+.tx-notice-track::-webkit-scrollbar{display:none}
+.tx-notice-track b{color:#ffd479;font-weight:600}
+.tx-notice-track span{flex:none}
+.tx-notice-track span::after{content:"•";margin-left:44px;color:#a98a4e}
+
+.tx-header{background:rgba(255,250,240,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--tx-line)}
+.tx-header-inner{display:flex;align-items:center;gap:24px;height:66px}
+.tx-brand{display:flex;align-items:center;gap:10px;flex:none}
+.tx-brand-mark{width:38px;height:38px;flex:none}
+.tx-brand-name{font-size:19px;font-weight:800;letter-spacing:.5px;line-height:1.15}
+.tx-brand-sub{font-size:10.5px;color:var(--tx-ink-soft);letter-spacing:2px;font-weight:500}
+.tx-nav{display:flex;gap:4px;margin-left:8px;flex-wrap:wrap}
+.tx-nav a{
+  font-size:14.5px;padding:7px 12px;border-radius:999px;color:var(--tx-ink-soft);
+  transition:.2s;font-weight:500;
+}
+.tx-nav a:hover{background:var(--tx-soft);color:var(--tx-amber-deep)}
+.tx-header-tools{display:flex;align-items:center;gap:10px;margin-left:auto}
+.tx-search{position:relative;display:flex;align-items:center}
+.tx-search input{
+  width:196px;padding:8px 34px 8px 14px;border-radius:999px;border:1px solid var(--tx-line);
+  background:#fff;font-size:13.5px;color:var(--tx-ink);outline:none;transition:.25s;
+}
+.tx-search input:focus{border-color:var(--tx-amber);box-shadow:0 0 0 3px rgba(240,140,0,.14);width:224px}
+.tx-search button{
+  position:absolute;right:4px;width:28px;height:28px;border:none;background:var(--tx-amber);
+  border-radius:50%;color:#fff;display:grid;place-items:center;font-size:13px;
+}
+.tx-search-feedback{
+  position:absolute;top:calc(100% + 8px);left:0;right:0;background:#fff;border:1px solid var(--tx-line);
+  border-radius:12px;box-shadow:var(--tx-shadow);padding:10px 12px;font-size:13px;color:var(--tx-ink-soft);
+  display:none;z-index:50;
+}
+.tx-search-feedback.tx-on{display:block}
+.tx-btn-primary{
+  background:var(--tx-amber);color:#fff;border:none;border-radius:999px;
+  padding:9px 20px;font-size:14px;font-weight:700;transition:.2s;white-space:nowrap;
+}
+.tx-btn-primary:hover{background:var(--tx-amber-deep);transform:translateY(-1px)}
+.tx-burger{display:none;background:none;border:1px solid var(--tx-line);border-radius:10px;padding:6px 10px;font-size:18px;line-height:1}
+
+/* ============ 首屏 ============ */
+.tx-hero{padding:52px 0 64px;position:relative;overflow:hidden}
+.tx-hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(620px 320px at 88% 8%,rgba(246,185,59,.22),transparent 70%),
+    radial-gradient(420px 300px at 4% 92%,rgba(232,89,12,.10),transparent 70%);
+  pointer-events:none;
+}
+.tx-hero-grid{position:relative;display:grid;grid-template-columns:6fr 4fr;gap:48px;align-items:center}
+.tx-hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--tx-line);
+  border-radius:999px;padding:5px 15px;font-size:12.5px;font-weight:600;color:var(--tx-amber-deep);
+  letter-spacing:1px;box-shadow:0 4px 14px rgba(160,110,30,.08);
+}
+.tx-hero-kicker::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--tx-amber);box-shadow:0 0 0 4px rgba(240,140,0,.18)}
+.tx-hero h1{
+  font-size:clamp(38px,5vw,60px);line-height:1.12;font-weight:900;letter-spacing:1px;margin:20px 0 6px;
+  background:linear-gradient(100deg,#3a2c1a 30%,#b36a00 75%,#e8590c);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.tx-hero-tagline{font-size:clamp(16px,2vw,20px);font-weight:600;color:var(--tx-amber-deep);margin-bottom:16px}
+.tx-hero-intro{font-size:15px;color:var(--tx-ink-soft);max-width:56ch;margin-bottom:24px}
+.tx-hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:30px}
+.tx-btn-ghost{
+  background:#fff;border:1px solid var(--tx-line);border-radius:999px;padding:9px 20px;
+  font-size:14px;font-weight:600;color:var(--tx-ink);transition:.2s;
+}
+.tx-btn-ghost:hover{border-color:var(--tx-amber);color:var(--tx-amber-deep);transform:translateY(-1px)}
+.tx-hero-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:520px}
+.tx-hero-stat{background:#fff;border:1px solid var(--tx-line);border-radius:14px;padding:12px 14px;box-shadow:0 6px 18px rgba(160,110,30,.06)}
+.tx-hero-stat b{display:block;font-size:23px;font-weight:900;color:var(--tx-ink);line-height:1.25}
+.tx-hero-stat b i{font-style:normal;font-size:13px;color:var(--tx-amber);font-weight:700;margin-left:2px}
+.tx-hero-stat span{font-size:12px;color:var(--tx-ink-soft)}
+.tx-hero-visual{position:relative}
+.tx-hero-visual .tx-hero-frame{
+  border-radius:26px;overflow:hidden;border:6px solid #fff;box-shadow:0 24px 50px rgba(150,100,20,.20);
+  background:#fff;transform:rotate(.6deg);
+}
+.tx-hero-visual img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.tx-hero-float{
+  position:absolute;left:-16px;bottom:22px;background:#fff;border:1px solid var(--tx-line);
+  border-radius:14px;padding:10px 14px;box-shadow:var(--tx-shadow);display:flex;gap:10px;align-items:center;
+  font-size:12.5px;font-weight:600;
+}
+.tx-hero-float .tx-hero-dot{width:9px;height:9px;border-radius:50%;background:#2f9e44;box-shadow:0 0 0 4px rgba(47,158,68,.18)}
+.tx-hero-season{position:absolute;top:18px;right:-10px;background:#3a2c1a;color:#ffe6b0;font-size:12px;padding:6px 14px;border-radius:999px;letter-spacing:1px}
+
+/* ============ 通用 section ============ */
+.tx-section{padding:64px 0}
+.tx-section-alt{background:var(--tx-paper);border-top:1px solid var(--tx-line);border-bottom:1px solid var(--tx-line)}
+.tx-sec-head{max-width:760px;margin-bottom:34px}
+.tx-eyebrow{font-size:12.5px;font-weight:800;letter-spacing:3px;color:var(--tx-amber);text-transform:uppercase}
+.tx-sec-head h2{font-size:clamp(25px,3vw,34px);font-weight:900;letter-spacing:.5px;line-height:1.25;margin:10px 0 10px}
+.tx-sec-head p{font-size:14.5px;color:var(--tx-ink-soft)}
+.tx-sec-head-center{margin-left:auto;margin-right:auto;text-align:center}
+
+/* ============ 焦点 + 视频流（A 门户焦点型） ============ */
+.tx-focus-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:26px;margin-bottom:38px}
+.tx-focus-main{background:#fff;border:1px solid var(--tx-line);border-radius:var(--tx-radius);overflow:hidden;box-shadow:var(--tx-shadow);display:flex;flex-direction:column}
+.tx-focus-main figure{position:relative;margin:0}
+.tx-focus-main img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.tx-play{position:absolute;inset:0;display:grid;place-items:center}
+.tx-play span{width:62px;height:62px;border-radius:50%;background:rgba(255,250,240,.92);display:grid;place-items:center;box-shadow:0 8px 26px rgba(0,0,0,.22);transition:.2s}
+.tx-play span::after{content:"";border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent #e8590c;margin-left:4px}
+.tx-focus-main:hover .tx-play span{transform:scale(1.1);background:#fff}
+.tx-focus-body{padding:20px 24px 24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.tx-tagrow{display:flex;flex-wrap:wrap;gap:8px}
+.tx-tag{font-size:11.5px;font-weight:700;color:var(--tx-amber-deep);background:var(--tx-soft);border-radius:999px;padding:3px 11px;letter-spacing:.4px}
+.tx-focus-body h3{font-size:21px;font-weight:800;line-height:1.4}
+.tx-focus-body p{font-size:14px;color:var(--tx-ink-soft)}
+.tx-meta{font-size:12.5px;color:#8a775e;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
+.tx-meta b{color:var(--tx-ink);font-weight:700}
+.tx-action-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px}
+.tx-chip{
+  border:1px solid var(--tx-line);background:#fff;border-radius:999px;padding:5px 13px;font-size:12.5px;
+  color:var(--tx-ink-soft);display:inline-flex;align-items:center;gap:6px;transition:.18s;font-weight:600;
+}
+.tx-chip:hover{border-color:var(--tx-amber);color:var(--tx-amber-deep);transform:translateY(-1px)}
+.tx-chip.tx-liked{background:#fff0e0;border-color:var(--tx-amber);color:var(--tx-amber-deep)}
+.tx-chip.tx-saved{background:#fdf0d5;border-color:#e8a80c;color:#a46800}
+.tx-chip .tx-count{font-variant-numeric:tabular-nums}
+
+.tx-focus-side{display:flex;flex-direction:column;gap:14px}
+.tx-side-item{
+  flex:1;background:#fff;border:1px solid var(--tx-line);border-radius:14px;padding:15px 17px;
+  display:flex;flex-direction:column;gap:8px;transition:.2s;
+}
+.tx-side-item:hover{transform:translateX(4px);border-color:#f0c876;box-shadow:0 10px 22px rgba(160,110,30,.09)}
+.tx-side-item .tx-side-no{font-size:12px;font-weight:800;color:var(--tx-amber);letter-spacing:2px}
+.tx-side-item h4{font-size:15.5px;font-weight:800;line-height:1.4}
+.tx-side-item p{font-size:13px;color:var(--tx-ink-soft);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* 视频列表 */
+.tx-video-list{display:flex;flex-direction:column;gap:14px}
+.tx-video-row{
+  display:grid;grid-template-columns:minmax(0,72px) minmax(0,1fr) auto;gap:18px;align-items:center;
+  background:#fff;border:1px solid var(--tx-line);border-radius:16px;padding:16px 20px;transition:.2s;
+}
+.tx-video-row:hover{border-color:#f0c876;box-shadow:0 10px 24px rgba(160,110,30,.09)}
+.tx-video-idx{font-size:24px;font-weight:900;color:#e8d4ae;text-align:center;line-height:1;font-variant-numeric:tabular-nums}
+.tx-video-main{display:flex;flex-direction:column;gap:7px;min-width:0}
+.tx-video-main h3{font-size:16.5px;font-weight:800;line-height:1.4}
+.tx-video-main p{font-size:13.5px;color:var(--tx-ink-soft)}
+.tx-video-ops{display:flex;flex-direction:column;gap:8px;align-items:flex-end;flex:none}
+.tx-avatar{
+  display:inline-grid;place-items:center;border-radius:50%;color:#fff;font-weight:800;
+  width:30px;height:30px;font-size:13px;flex:none;letter-spacing:.5px;
+}
+.tx-authorline{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--tx-ink-soft)}
+.tx-authorline b{color:var(--tx-ink);font-weight:700}
+
+/* ============ 专题模块 ============ */
+.tx-topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.tx-topic{background:#fff;border:1px solid var(--tx-line);border-radius:var(--tx-radius);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 6px 18px rgba(160,110,30,.06);transition:.2s}
+.tx-topic:hover{transform:translateY(-4px);box-shadow:0 18px 34px rgba(160,110,30,.14)}
+.tx-topic figure{margin:0;position:relative}
+.tx-topic figure img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.tx-topic-status{position:absolute;top:12px;left:12px;font-size:11.5px;font-weight:700;background:rgba(58,44,26,.86);color:#ffe6b0;padding:3px 11px;border-radius:999px}
+.tx-topic-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.tx-topic-body h3{font-size:18px;font-weight:800;line-height:1.4}
+.tx-topic-body p{font-size:13.5px;color:var(--tx-ink-soft)}
+.tx-topic-list{list-style:none;display:flex;flex-direction:column;gap:7px;margin-top:4px}
+.tx-topic-list li{font-size:13px;color:var(--tx-ink-soft);padding-left:16px;position:relative}
+.tx-topic-list li::before{content:"";position:absolute;left:2px;top:9px;width:5px;height:5px;border-radius:50%;background:var(--tx-amber)}
+.tx-topic-foot{margin-top:auto;padding-top:10px;border-top:1px dashed var(--tx-line);font-size:12.5px;color:#8a775e;display:flex;justify-content:space-between;gap:8px}
+
+/* ============ 剧情解析（正文 800 字） ============ */
+.tx-deep-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:40px;align-items:start}
+.tx-deep-body h2{margin-bottom:16px}
+.tx-deep-body h3{font-size:18.5px;font-weight:800;margin:26px 0 10px;padding-left:12px;border-left:4px solid var(--tx-amber);line-height:1.4}
+.tx-deep-body p{font-size:14.5px;color:#584732;margin-bottom:12px}
+.tx-deep-body strong{color:var(--tx-amber-deep)}
+.tx-deep-aside{display:flex;flex-direction:column;gap:16px;position:sticky;top:calc(var(--tx-head-h) + 18px)}
+.tx-aside-card{background:#fff;border:1px solid var(--tx-line);border-radius:16px;padding:18px 20px;box-shadow:0 8px 22px rgba(160,110,30,.07)}
+.tx-aside-card h4{font-size:15px;font-weight:800;margin-bottom:10px}
+.tx-aside-num{display:flex;justify-content:space-between;gap:10px;font-size:13px;color:var(--tx-ink-soft);padding:6px 0;border-bottom:1px dashed var(--tx-line)}
+.tx-aside-num:last-child{border-bottom:none}
+.tx-aside-num b{color:var(--tx-ink);font-variant-numeric:tabular-nums}
+.tx-aside-quote{font-size:13.5px;color:#7a6244;line-height:1.85;border-left:3px solid #f4c979;padding-left:12px}
+
+/* ============ 创作者矩阵 ============ */
+.tx-author-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.tx-author-card{
+  background:#fff;border:1px solid var(--tx-line);border-radius:16px;padding:20px 22px;
+  display:flex;flex-direction:column;gap:12px;transition:.2s;
+}
+.tx-author-card:hover{border-color:#f0c876;box-shadow:0 14px 30px rgba(160,110,30,.10)}
+.tx-author-head{display:flex;align-items:center;gap:14px}
+.tx-author-head .tx-avatar{width:54px;height:54px;font-size:20px;box-shadow:0 6px 16px rgba(160,110,30,.18)}
+.tx-author-head h3{font-size:17px;font-weight:800;line-height:1.3}
+.tx-author-field{font-size:12.5px;color:var(--tx-amber-deep);font-weight:700}
+.tx-author-card p{font-size:13.5px;color:var(--tx-ink-soft)}
+.tx-author-stats{display:flex;gap:20px;font-size:12.5px;color:#8a775e;flex-wrap:wrap}
+.tx-author-stats b{color:var(--tx-ink);font-weight:800;font-size:14.5px}
+.tx-author-card .tx-btn-ghost{align-self:flex-start;padding:6px 15px;font-size:12.5px}
+
+/* ============ 评价短评（引用式列表） ============ */
+.tx-review-grid{columns:2;column-gap:20px}
+.tx-review{
+  break-inside:avoid;margin-bottom:18px;background:#fff;border:1px solid var(--tx-line);
+  border-radius:14px;padding:17px 19px;box-shadow:0 4px 14px rgba(160,110,30,.05);
+}
+.tx-review p{font-size:13.8px;color:#584732;line-height:1.8}
+.tx-review-foot{display:flex;align-items:center;gap:10px;margin-top:12px;font-size:12px;color:#8a775e}
+.tx-review-foot b{color:var(--tx-ink);font-size:12.5px}
+.tx-stars{color:#e8a80c;letter-spacing:2px;font-size:12px}
+
+/* ============ 企业动态 + 合作 + FAQ ============ */
+.tx-aux-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:30px}
+.tx-news{background:#fff;border:1px solid var(--tx-line);border-radius:16px;padding:8px 22px;box-shadow:0 6px 18px rgba(160,110,30,.06)}
+.tx-news li{list-style:none;display:flex;gap:14px;padding:15px 0;border-bottom:1px dashed var(--tx-line);align-items:flex-start}
+.tx-news li:last-child{border-bottom:none}
+.tx-news .tx-date{flex:none;font-size:12px;font-weight:800;color:var(--tx-amber-deep);background:var(--tx-soft);border-radius:8px;padding:4px 9px;line-height:1.4;text-align:center}
+.tx-news h4{font-size:14.5px;font-weight:800;line-height:1.45;margin-bottom:3px}
+.tx-news p{font-size:13px;color:var(--tx-ink-soft)}
+.tx-partners{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.tx-partner{
+  background:#fff;border:1px solid var(--tx-line);border-radius:12px;padding:14px 16px;
+  display:flex;align-items:center;gap:11px;font-size:13.5px;font-weight:700;transition:.2s;
+}
+.tx-partner:hover{border-color:#f0c876;transform:translateY(-2px)}
+.tx-partner i{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;font-style:normal;font-weight:900;color:#fff;font-size:14px;flex:none}
+.tx-partner span{display:block;font-size:11.5px;color:var(--tx-ink-soft);font-weight:500}
+
+.tx-faq{display:flex;flex-direction:column;gap:10px}
+.tx-faq details{
+  background:#fff;border:1px solid var(--tx-line);border-radius:13px;padding:0 18px;transition:.2s;
+}
+.tx-faq details[open]{border-color:#f0c876;box-shadow:0 8px 20px rgba(160,110,30,.08)}
+.tx-faq summary{
+  list-style:none;cursor:pointer;padding:15px 0;font-size:14.5px;font-weight:700;
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+}
+.tx-faq summary::-webkit-details-marker{display:none}
+.tx-faq summary::after{content:"+";font-size:19px;font-weight:400;color:var(--tx-amber);transition:.2s;flex:none}
+.tx-faq details[open] summary::after{content:"−";transform:rotate(180deg)}
+.tx-faq details p{font-size:13.5px;color:var(--tx-ink-soft);padding-bottom:16px}
+
+/* ============ 投稿 CTA ============ */
+.tx-cta{
+  background:linear-gradient(120deg,#3a2c1a,#6b4c14 62%,#a8741a);
+  border-radius:22px;padding:42px 40px;color:#fff6e5;display:flex;align-items:center;gap:30px;flex-wrap:wrap;
+  box-shadow:0 22px 46px rgba(120,80,10,.22);
+}
+.tx-cta h2{font-size:clamp(22px,2.6vw,30px);font-weight:900;line-height:1.3;margin-bottom:8px}
+.tx-cta p{font-size:14px;color:#f1ddb8;max-width:60ch}
+.tx-cta .tx-cta-btns{display:flex;gap:12px;flex-wrap:wrap;margin-left:auto}
+.tx-btn-light{background:#f6b93b;color:#3a2c1a;border:none;border-radius:999px;padding:11px 24px;font-weight:800;font-size:14.5px;transition:.2s}
+.tx-btn-light:hover{background:#ffd479;transform:translateY(-2px)}
+.tx-btn-line{background:transparent;border:1px solid rgba(255,230,176,.55);color:#ffe6b0;border-radius:999px;padding:11px 22px;font-weight:600;font-size:14.5px;transition:.2s}
+.tx-btn-line:hover{border-color:#ffd479;background:rgba(255,212,121,.12)}
+
+/* ============ 页脚 ============ */
+.tx-footer{background:#31260f;color:#d9c9a8;padding:52px 0 0;margin-top:0}
+.tx-footer-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:34px;padding-bottom:36px}
+.tx-footer h4{font-size:14px;color:#ffe6b0;font-weight:800;margin-bottom:14px;letter-spacing:.5px}
+.tx-footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.tx-footer-brand .tx-brand-name{color:#fff6e5}
+.tx-footer p{font-size:13px;line-height:1.85;color:#bfae8c}
+.tx-footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.tx-footer a{font-size:13px;color:#c9b996;transition:.18s}
+.tx-footer a:hover{color:#ffd479}
+.tx-footer-bottom{border-top:1px solid rgba(255,230,176,.14);padding:20px 0;font-size:12.5px;color:#9d8d6d;display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-between}
+
+/* ============ 回到顶部 & Toast & 弹窗 ============ */
+.tx-top{
+  position:fixed;right:22px;bottom:26px;width:46px;height:46px;border-radius:50%;border:none;
+  background:var(--tx-amber);color:#fff;font-size:19px;display:grid;place-items:center;
+  box-shadow:0 10px 26px rgba(190,120,10,.36);opacity:0;pointer-events:none;transition:.25s;z-index:100;
+}
+.tx-top.tx-show{opacity:1;pointer-events:auto}
+.tx-top:hover{background:var(--tx-amber-deep);transform:translateY(-3px)}
+.tx-toast{
+  position:fixed;left:50%;bottom:34px;transform:translate(-50%,18px);background:#31260f;color:#ffe6b0;
+  padding:10px 20px;border-radius:999px;font-size:13.5px;box-shadow:0 12px 30px rgba(0,0,0,.24);
+  opacity:0;pointer-events:none;transition:.28s;z-index:200;max-width:88vw;text-align:center;
+}
+.tx-toast.tx-show{opacity:1;transform:translate(-50%,0)}
+.tx-modal{
+  position:fixed;inset:0;background:rgba(40,30,12,.55);backdrop-filter:blur(3px);
+  display:none;place-items:center;z-index:300;padding:20px;
+}
+.tx-modal.tx-open{display:grid}
+.tx-modal-card{
+  background:var(--tx-paper);border-radius:20px;max-width:520px;width:100%;padding:28px;position:relative;
+  max-height:86vh;overflow:auto;box-shadow:0 30px 70px rgba(0,0,0,.3);
+}
+.tx-modal-card h3{font-size:20px;font-weight:900;margin-bottom:6px}
+.tx-modal-card .tx-modal-sub{font-size:13.5px;color:var(--tx-ink-soft);margin-bottom:18px}
+.tx-modal-close{position:absolute;top:14px;right:14px;border:none;background:var(--tx-soft);color:var(--tx-amber-deep);width:30px;height:30px;border-radius:50%;font-size:16px;line-height:1}
+.tx-modal-card label{display:block;font-size:13px;font-weight:700;margin-bottom:6px;margin-top:14px}
+.tx-modal-card input,.tx-modal-card textarea{
+  width:100%;border:1px solid var(--tx-line);border-radius:10px;padding:9px 12px;font-size:13.5px;
+  font-family:inherit;color:var(--tx-ink);background:#fff;outline:none;
+}
+.tx-modal-card input:focus,.tx-modal-card textarea:focus{border-color:var(--tx-amber);box-shadow:0 0 0 3px rgba(240,140,0,.13)}
+.tx-modal-card .tx-btn-primary{width:100%;margin-top:18px;padding:11px}
+.tx-share-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:8px}
+.tx-share-row button{
+  border:1px solid var(--tx-line);background:#fff;border-radius:10px;padding:11px 6px;font-size:13px;font-weight:700;color:var(--tx-ink);transition:.2s;
+}
+.tx-share-row button:hover{border-color:var(--tx-amber);color:var(--tx-amber-deep)}
+
+/* ============ 响应式 ============ */
+@media (max-width:980px){
+  :root{--tx-head-h:150px}
+  .tx-hero-grid{grid-template-columns:1fr;gap:32px}
+  .tx-focus-grid{grid-template-columns:1fr}
+  .tx-topic-grid{grid-template-columns:1fr 1fr}
+  .tx-deep-grid{grid-template-columns:1fr}
+  .tx-deep-aside{position:static}
+  .tx-aux-grid{grid-template-columns:1fr}
+  .tx-footer-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  :root{--tx-head-h:156px}
+  .tx-nav{
+    display:none;position:absolute;left:0;right:0;top:100%;background:#fffaf0;
+    border-bottom:1px solid var(--tx-line);padding:12px 4vw 18px;flex-direction:column;gap:2px;
+    box-shadow:0 16px 26px rgba(160,110,30,.12);
+  }
+  .tx-nav.tx-open{display:flex}
+  .tx-nav a{padding:10px 14px;border-radius:10px}
+  .tx-burger{display:block}
+  .tx-header-inner{flex-wrap:wrap;height:auto;padding:12px 0;position:relative}
+  .tx-search input{width:130px}
+  .tx-search input:focus{width:150px}
+  .tx-btn-primary.tx-header-cta{display:none}
+  .tx-hero-stats{grid-template-columns:1fr 1fr}
+  .tx-video-row{grid-template-columns:minmax(0,1fr);gap:10px}
+  .tx-video-idx{text-align:left}
+  .tx-video-ops{flex-direction:row;align-items:center;flex-wrap:wrap}
+  .tx-topic-grid,.tx-author-grid{grid-template-columns:1fr}
+  .tx-review-grid{columns:1}
+  .tx-partners{grid-template-columns:1fr}
+  .tx-cta{padding:30px 24px}
+  .tx-cta .tx-cta-btns{margin-left:0}
+  .tx-footer-grid{grid-template-columns:1fr}
+  .tx-hero-float{left:6px}
+  .tx-hero-season{right:4px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+<a class="tx-skip" href="#tx-main">跳到主要内容</a>
+
+<div class="tx-sticky-top">
+  <div class="tx-notice" role="region" aria-label="站内公告">
+    <div class="tx-wrap tx-notice-inner">
+      <span class="tx-notice-badge">官方发布</span>
+      <div class="tx-notice-track">
+        <span><b>11/22</b>「冬日餐桌」专题第一季开播，6 位创作者同步上线</span>
+        <span><b>11/20</b> 溏心视频创作者扶持计划第二期开放报名，限额 200 名</span>
+        <span><b>11/18</b> 新版高清播放器上线，支持 4K 原片下载</span>
+        <span><b>11/15</b> 官方周边「暖光手账」预售开启，会员专享</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="tx-header">
+    <div class="tx-wrap tx-header-inner">
+      <a class="tx-brand" href="#tx-top" aria-label="溏心vlog视频官方首页">
+        <svg class="tx-brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="16" fill="#f6b93b"/>
+          <ellipse cx="32" cy="35" rx="17" ry="13" fill="#fff6e5"/>
+          <ellipse cx="32" cy="35" rx="9" ry="8" fill="#f08c00"/>
+          <circle cx="18" cy="20" r="4" fill="#fff6e5"/>
+          <path d="M32 8l4 7h-8z" fill="#e8590c"/>
+        </svg>
+        <span>
+          <span class="tx-brand-name">溏心vlog视频</span>
+          <span class="tx-brand-sub">OFFICIAL VIDEO PORTAL</span>
+        </span>
+      </a>
+
+      <nav class="tx-nav" id="tx-nav" aria-label="主导航">
+        <a href="#tx-focus">焦点内容</a>
+        <a href="#tx-topics">专题企划</a>
+        <a href="#tx-parse">品牌解读</a>
+        <a href="#tx-authors">创作者</a>
+        <a href="#tx-reviews">用户口碑</a>
+        <a href="#tx-aux">企业动态</a>
+      </nav>
+
+      <div class="tx-header-tools">
+        <div class="tx-search">
+          <input type="search" id="tx-search-input" placeholder="搜索视频 / 创作者 / 专题" aria-label="站内搜索">
+          <button id="tx-search-btn" aria-label="提交搜索">⌕</button>
+          <div class="tx-search-feedback" id="tx-search-feedback" role="status"></div>
+        </div>
+        <button class="tx-btn-primary tx-header-cta" data-open-modal="submit">投稿入口</button>
+        <button class="tx-burger" id="tx-burger" aria-label="展开导航菜单" aria-expanded="false" aria-controls="tx-nav">☰</button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main id="tx-main">
+
+  <!-- S2 首屏 -->
+  <section class="tx-hero" id="tx-top">
+    <div class="tx-wrap tx-hero-grid">
+      <div class="tx-hero-copy">
+        <span class="tx-hero-kicker">溏心vlog视频 · 官方网站</span>
+        <h1>溏心vlog视频</h1>
+        <p class="tx-hero-tagline">把日子拍成可以回温的影像</p>
+        <p class="tx-hero-intro">
+          溏心vlog视频是一家专注真实生活影像的原创视频品牌与企业内容平台。我们相信日常本身就有分量：一顿饭、一段路、一次深夜的整理，都值得被高清记录、被认真剪辑、被温柔看见。作为深耕生活记录垂直领域的官方平台，我们持续运营创作者社区，为创作者与企业搭建高品质、正版、可持续的内容生态。
+        </p>
+        <div class="tx-hero-actions">
+          <a class="tx-btn-primary" href="#tx-focus">观看本期焦点</a>
+          <a class="tx-btn-ghost" href="#tx-authors">认识创作者</a>
+          <button class="tx-btn-ghost" data-open-modal="submit">上传我的作品</button>
+        </div>
+        <div class="tx-hero-stats">
+          <div class="tx-hero-stat"><b>1,286<i>万</i></b><span>累计播放量</span></div>
+          <div class="tx-hero-stat"><b>3,420<i>位</i></b><span>入驻创作者</span></div>
+          <div class="tx-hero-stat"><b>98.2<i>%</i></b><span>用户好评率</span></div>
+        </div>
+      </div>
+      <div class="tx-hero-visual">
+        <div class="tx-hero-frame">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 600'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ffe9bd'/%3E%3Cstop offset='1' stop-color='%23f4a63a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='600' fill='url(%23g1)'/%3E%3Ccircle cx='360' cy='110' r='62' fill='%23fff6e5' opacity='.85'/%3E%3Crect x='0' y='430' width='480' height='170' fill='%23c76a00' opacity='.28'/%3E%3Crect x='66' y='300' width='200' height='150' rx='10' fill='%23fffaf0'/%3E%3Crect x='82' y='318' width='168' height='96' rx='6' fill='%233a2c1a'/%3E%3Cpath d='M120 390l26-32 22 24 30-40 26 48z' fill='%23f6b93b'/%3E%3Ccircle cx='140' cy='336' r='9' fill='%23ffe9bd'/%3E%3Crect x='290' y='330' width='118' height='86' rx='9' fill='%233a2c1a'/%3E%3Crect x='300' y='342' width='98' height='54' fill='%23f6b93b'/%3E%3Cpath d='M312 382l20-24 18 22 18-28 16 30z' fill='%23fffaf0'/%3E%3Ccircle cx='316' cy='356' r='7' fill='%23fffaf0'/%3E%3Cpath d='M0 520c90-38 170-38 240-6s150 30 240-8v94H0z' fill='%238a4f06' opacity='.35'/%3E%3Cpath d='M0 470h480' stroke='%23fff6e5' stroke-width='3' opacity='.55'/%3E%3C/svg%3E" alt="溏心vlog视频首屏主视觉：暖橙色调下厨房与影音设备的同框画面" width="480" height="600">
+        </div>
+        <div class="tx-hero-float"><span class="tx-hero-dot"></span>今日更新 12 条原创视频</div>
+        <span class="tx-hero-season">冬日企划 · 第一季</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- S3 焦点内容 + 视频流 -->
+  <section class="tx-section" id="tx-focus">
+    <div class="tx-wrap">
+      <div class="tx-sec-head">
+        <span class="tx-eyebrow">Focus</span>
+        <h2>本期焦点 · 溏心vlog视频编辑部精选</h2>
+        <p>由官方编辑团队与本季驻站创作者共同选出。这里只放我们愿意反复回看的影像，也是一份属于溏心vlog视频社区的共同记忆。</p>
+      </div>
+
+      <div class="tx-focus-grid">
+        <article class="tx-focus-main">
+          <figure>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 720 405'%3E%3Cdefs%3E%3ClinearGradient id='f1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233a2c1a'/%3E%3Cstop offset='1' stop-color='%23a8741a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='720' height='405' fill='url(%23f1)'/%3E%3Ccircle cx='600' cy='84' r='46' fill='%23f6b93b' opacity='.9'/%3E%3Crect x='70' y='150' width='250' height='170' rx='12' fill='%23fffaf0' opacity='.94'/%3E%3Crect x='92' y='172' width='206' height='102' rx='7' fill='%233a2c1a'/%3E%3Cpath d='M120 250l30-36 26 28 34-44 30 52z' fill='%23f6b93b'/%3E%3Ccircle cx='146' cy='196' r='10' fill='%23ffe9bd'/%3E%3Crect x='360' y='118' width='290' height='180' rx='14' fill='%23fff6e5' opacity='.15' stroke='%23ffe9bd' stroke-width='2'/%3E%3Crect x='386' y='146' width='238' height='124' rx='8' fill='%23f6b93b' opacity='.35'/%3E%3Cpath d='M0 330c120-46 240-40 350-10s250 26 370-14v99H0z' fill='%23312%60f' opacity='.5'/%3E%3C/svg%3E" alt="本期焦点视频封面：窗边书桌上摊开的影像手账与播放器" width="720" height="405">
+            <div class="tx-play" aria-hidden="true"><span></span></div>
+          </figure>
+          <div class="tx-focus-body">
+            <div class="tx-tagrow">
+              <span class="tx-tag">日常记录</span><span class="tx-tag">高清原片</span><span class="tx-tag">官方推荐</span>
+            </div>
+            <h3>《把一整天拍成一分钟》第 14 期：在出租屋里过完一个完整的冬日</h3>
+            <p>从早上六点半的第一壶水，到夜里十一点的收尾整理。这期溏心vlog视频用 47 个镜头记录了一个普通工作日的全部细节，没有剧本，只有真实的生活节奏和一点点被放大的光。</p>
+            <div class="tx-meta">
+              <span class="tx-authorline"><span class="tx-avatar" style="background:#e8590c">溏</span><b>溏心编辑部</b></span>
+              <span>时长 12:06</span><span>播放 <b>86.4万</b></span><span>收藏 <b>2.1万</b></span>
+            </div>
+            <div class="tx-action-row">
+              <button class="tx-chip tx-like" data-base="86400"><span>♡ 点赞</span><span class="tx-count">86,400</span></button>
+              <button class="tx-chip tx-save">☆ 收藏</button>
+              <button class="tx-chip tx-copy">⧉ 复制链接</button>
+              <button class="tx-chip" data-open-modal="share">↗ 分享</button>
+            </div>
+          </div>
+        </article>
+
+        <div class="tx-focus-side">
+          <article class="tx-side-item">
+            <span class="tx-side-no">01 / 深度测评</span>
+            <h4>六台家用相机横评：谁更适合拍生活影像</h4>
+            <p>我们借来六台设备，在同一个厨房、同一段午后光线下拍了同一锅溏心蛋，用最笨的方法告诉你差别在哪。</p>
+          </article>
+          <article class="tx-side-item">
+            <span class="tx-side-no">02 / 人物访谈</span>
+            <h4>对话「晚风厨房」：一个人做饭，也要认真摆盘</h4>
+            <p>入驻溏心vlog视频两年的创作者，聊了聊她为什么坚持每周更新一顿一人食，以及那些被评论区记住的瞬间。</p>
+          </article>
+          <article class="tx-side-item">
+            <span class="tx-side-no">03 / 城市探索</span>
+            <h4>凌晨四点的菜市场，藏着城市最早的一段光</h4>
+            <p>本季城市影像计划的第三支短片，跟随摊主老陈走完他一天中最忙的三个小时。</p>
+          </article>
+          <article class="tx-side-item">
+            <span class="tx-side-no">04 / 创作幕后</span>
+            <h4>一条 60 秒视频背后的 9 小时剪辑台</h4>
+            <p>从素材整理到配乐选择，剪辑师小满公开了他在溏心vlog视频的完整工作流程。</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="tx-video-list">
+        <article class="tx-video-row">
+          <div class="tx-video-idx">01</div>
+          <div class="tx-video-main">
+            <div class="tx-tagrow"><span class="tx-tag">美食烹饪</span><span class="tx-tag">教程干货</span></div>
+            <h3>溏心蛋的七种做法：从 5 分 30 秒到 9 分钟的完整对照</h3>
+            <p>用同一批鸡蛋、同一口锅，逐秒记录蛋黄状态变化，附一张可以贴在冰箱上的时间对照表。</p>
+            <div class="tx-meta">
+              <span class="tx-authorline"><span class="tx-avatar" style="background:#c76a00">暖</span><b>暖锅小满</b></span>
+              <span>时长 8:42</span><span>播放 <b>42.7万</b></span><span>点赞 <b>3.4万</b></span>
+            </div>
+          </div>
+          <div class="tx-video-ops">
+            <button class="tx-chip tx-like" data-base="34000"><span>♡</span><span class="tx-count">34,000</span></button>
+            <button class="tx-chip tx-save">☆ 收藏</button>
+          </div>
+        </article>
+
+        <article class="tx-video-row">
+          <div class="tx-video-idx">02</div>
+          <div class="tx-video-main">
+            <div class="tx-tagrow"><span class="tx-tag">家居收纳</span><span class="tx-tag">实用技巧</span></div>
+            <h3>十平米卧室改造实录：用 300 元把杂物间变成能待一整天的地方</h3>
+            <p>没有请设计师，全部来自评论区留言的建议。改造前后的对照镜头放慢了三倍速，方便你截图参考。</p>
+            <div class="tx-meta">
+              <span class="tx-authorline"><span class="tx-avatar" style="background:#6b8e23">栖</span><b>栖栖不加班</b></span>
+              <span>时长 15:20</span><span>播放 <b>31.2万</b></span><span>点赞 <b>2.6万</b></span>
+            </div>
+          </div>
+          <div class="tx-video-ops">
+            <button class="tx-chip tx-like" data-base="26000"><span>♡</span><span class="tx-count">26,000</span></button>
+            <button class="tx-chip tx-save">☆ 收藏</button>
+          </div>
+        </article>
+
+        <article class="tx-video-row">
+          <div class="tx-video-idx">03</div>
+          <div class="tx-video-main">
+            <div class="tx-tagrow"><span class="tx-tag">城市探索</span><span class="tx-tag">在地文化</span></div>
+            <h3>沿着一条河走完这座城：三小时步行影像日记</h3>
+            <p>从旧桥到码头，每到一个路口就停下来拍十秒。没有旁白，只有环境声和偶尔入镜的路人。</p>
+            <div class="tx-meta">
+              <span class="tx-authorline"><span class="tx-avatar" style="background:#1c7ed6">野</span><b>野格路书</b></span>
+              <span>时长 10:18</span><span>播放 <b>27.9万</b></span><span>点赞 <b>2.1万</b></span>
+            </div>
+          </div>
+          <div class="tx-video-ops">
+            <button class="tx-chip tx-like" data-base="21000"><span>♡</span><span class="tx-count">21,000</span></button>
+            <button class="tx-chip tx-save">☆ 收藏</button>
+          </div>
+        </article>
+
+        <article class="tx-video-row">
+          <div class="tx-video-idx">04</div>
+          <div class="tx-video-main">
+            <div class="tx-tagrow"><span class="tx-tag">情感故事</span><span class="tx-tag">治愈影像</span></div>
+            <h3>给三年后的自己留一条视频：关于搬家、换工作和重新开始</h3>
+            <p>拍摄于上个冬天，剪辑于今年春天。中间隔着的那些不确定，被留在了一条条没有删掉的废片里。</p>
+            <div class="tx-meta">
+              <span class="tx-authorline"><span class="tx-avatar" style="background:#ae3ec9">南</span><b>南窗記</b></span>
+              <span>时长 6:54</span><span>播放 <b>19.5万</b></span><span>点赞 <b>1.8万</b></span>
+            </div>
+          </div>
+          <div class="tx-video-ops">
+            <button class="tx-chip tx-like" data-base="18000"><span>♡</span><span class="tx-count">18,000</span></button>
+            <button class="tx-chip tx-save">☆ 收藏</button>
+          </div>
+        </article>
+
+        <article class="tx-video-row">
+          <div class="tx-video-idx">05</div>
+          <div class="tx-video-main">
+            <div class="tx-tagrow"><span class="tx-tag">科技前沿</span><span class="tx-tag">深度测评</span></div>
+            <h3>用一台旧相机拍 4K：我们做了 12 组对比测试</h3>
+            <p>设备不是门槛，方法才是。这条视频把参数、布光和后期流程全部摊开讲清楚。</p>
+            <div class="tx-meta">
+              <span class="tx-authorline"><span class="tx-avatar" style="background:#2f9e44">帧</span><b>帧率老周</b></span>
+              <span>时长 18:33</span><span>播放 <b>16.8万</b></span><span>点赞 <b>1.5万</b></span>
+            </div>
+          </div>
+          <div class="tx-video-ops">
+            <button class="tx-chip tx-like" data-base="15000"><span>♡</span><span class="tx-count">15,000</span></button>
+            <button class="tx-chip tx-save">☆ 收藏</button>
+          </div>
+        </article>
+
+        <article class="tx-video-row">
+          <div class="tx-video-idx">06</div>
+          <div class="tx-video-main">
+            <div class="tx-tagrow"><span class="tx-tag">萌宠日常</span><span class="tx-tag">陪伴</span></div>
+            <h3>猫在家里的第 1000 天：我记录了它每天等我回家的样子</h3>
+            <p>固定机位，固定时间，连续记录 30 天。最后剪出来的 3 分钟，比想象中更有力量。</p>
+            <div class="tx-meta">
+              <span class="tx-authorline"><span class="tx-avatar" style="background:#e8590c">猫</span><b>猫在等我</b></span>
+              <span>时长 3:12</span><span>播放 <b>12.3万</b></span><span>点赞 <b>1.2万</b></span>
+            </div>
+          </div>
+          <div class="tx-video-ops">
+            <button class="tx-chip tx-like" data-base="12000"><span>♡</span><span class="tx-count">12,000</span></button>
+            <button class="tx-chip tx-save">☆ 收藏</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S4 专题企划 -->
+  <section class="tx-section tx-section-alt" id="tx-topics">
+    <div class="tx-wrap">
+      <div class="tx-sec-head">
+        <span class="tx-eyebrow">Series</span>
+        <h2>正在进行的专题企划 · 溏心vlog视频官方出品</h2>
+        <p>专题是我们把零散影像聚成一条线索的方式。每个企划都有明确的编辑方向、稳定的更新节奏和开放的投稿入口，欢迎社区创作者一起参与。</p>
+      </div>
+      <div class="tx-topic-grid">
+        <article class="tx-topic">
+          <figure>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%23fff1d6'/%3E%3Ccircle cx='320' cy='60' r='40' fill='%23f6b93b'/%3E%3Crect x='40' y='120' width='200' height='14' rx='7' fill='%23c76a00'/%3E%3Crect x='40' y='150' width='150' height='14' rx='7' fill='%23e8a80c'/%3E%3Crect x='40' y='180' width='170' height='14' rx='7' fill='%23f0c876'/%3E%3Cpath d='M260 190c30-40 60-40 90 0' stroke='%23e8590c' stroke-width='9' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" alt="专题企划封面：冬日餐桌主题的餐盘与暖色光斑插画" width="400" height="250">
+            <span class="tx-topic-status">更新中 · 第 3 期</span>
+          </figure>
+          <div class="tx-topic-body">
+            <h3>冬日餐桌：一个人也要好好吃饭</h3>
+            <p>六位创作者用一个月记录各自的一人食日常，不谈效率，只谈愿不愿意为自己多花十分钟。</p>
+            <ul class="tx-topic-list">
+              <li>第 1 期 · 五分钟热汤面与一只溏心蛋</li>
+              <li>第 2 期 · 出租屋厨房的最小改造</li>
+              <li>第 3 期 · 把剩菜变成第二天的早餐</li>
+            </ul>
+            <div class="tx-topic-foot"><span>参与创作者 6 位</span><span>投稿入口开放</span></div>
+          </div>
+        </article>
+
+        <article class="tx-topic">
+          <figure>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%233a2c1a'/%3E%3Ccircle cx='110' cy='80' r='30' fill='%23f6b93b' opacity='.9'/%3E%3Cpath d='M0 190l70-60 60 50 60-70 70 70 70-50 70 60v60H0z' fill='%23a8741a' opacity='.7'/%3E%3Crect x='0' y='230' width='400' height='20' fill='%23fff6e5' opacity='.25'/%3E%3C/svg%3E" alt="专题企划封面：夜色城市剪影与步行路线的抽象构图" width="400" height="250">
+            <span class="tx-topic-status">更新中 · 第 2 期</span>
+          </figure>
+          <div class="tx-topic-body">
+            <h3>城市慢行：用脚步重新认识熟悉的街</h3>
+            <p>以步行为唯一交通方式的城市影像计划，每期一条路线、一位本地向导、一段没有解说的环境声。</p>
+            <ul class="tx-topic-list">
+              <li>第 1 期 · 早市到旧书店的两公里</li>
+              <li>第 2 期 · 沿河而行的三小时</li>
+              <li>第 3 期 · 夜班公交沿线记录</li>
+            </ul>
+            <div class="tx-topic-foot"><span>参与创作者 4 位</span><span>每周五更新</span></div>
+          </div>
+        </article>
+
+        <article class="tx-topic">
+          <figure>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%23e7f0e2'/%3E%3Crect x='60' y='50' width='120' height='150' rx='8' fill='%235c8a4a'/%3E%3Crect x='80' y='70' width='80' height='60' rx='4' fill='%23fff6e5'/%3E%3Crect x='210' y='90' width='140' height='14' rx='7' fill='%235c8a4a'/%3E%3Crect x='210' y='120' width='110' height='14' rx='7' fill='%238fb87c'/%3E%3Crect x='210' y='150' width='125' height='14' rx='7' fill='%23b6d3a6'/%3E%3Ccircle cx='330' cy='60' r='22' fill='%23f6b93b'/%3E%3C/svg%3E" alt="专题企划封面：绿色调的手作工具与材料桌面插画" width="400" height="250">
+            <span class="tx-topic-status">即将上线 · 筹备中</span>
+          </figure>
+          <div class="tx-topic-body">
+            <h3>手作一小时：把注意力交还给双手</h3>
+            <p>面向所有愿意慢下来的创作者，记录从零做出一件小物的完整过程，允许失败，也欢迎废片。</p>
+            <ul class="tx-topic-list">
+              <li>预告 · 一支笔与一张纸的下午</li>
+              <li>预告 · 旧衣改造的第一课</li>
+              <li>预告 · 给朋友做一份生日礼物</li>
+            </ul>
+            <div class="tx-topic-foot"><span>报名进行中</span><span>限 60 位创作者</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S4 品牌解读（800 字正文） -->
+  <section class="tx-section" id="tx-parse">
+    <div class="tx-wrap tx-deep-grid">
+      <div class="tx-deep-body">
+        <span class="tx-eyebrow">Brand Story</span>
+        <h2>关于溏心vlog视频：我们为什么坚持拍那些“不值得拍”的日常</h2>
+        <p>溏心vlog视频从一间两室一厅的合租房开始。最早只是一部旧手机和一个固定在三脚架上的下午，三个人轮流记录做饭、通勤、加班的片段，剪成三五分钟的短片发给朋友看。后来越来越多的人问能不能投稿，我们才意识到，这些看起来“不值得拍”的日常，其实有很多人想看，也有很多人正在过。于是，一个以真实生活影像为核心的视频品牌，从一个私人硬盘变成了一家企业，变成了今天的溏心vlog视频官方网站。</p>
+
+        <h3>从个人记录到企业级内容生态</h3>
+        <p>作为一家持续运营的原创视频企业，我们把内容分成三条主线：官方出品的专题企划、创作者自主上传的生活影像、以及面向企业与品牌的合作内容。三条线共享同一套审核标准与画质规范，也都统一在<strong>溏心vlog视频</strong>这个品牌之下。我们不做夸张标题，不鼓励把生活包装成奇观，更愿意把镜头留给真实的细节——比如锅盖掀开时那一秒腾起的热气，比如下班路上被路灯照亮的半截楼梯。平台目前拥有 3,420 位入驻创作者，累计上传原创视频超过 2.6 万条，全部支持高清与 4K 原片播放，所有内容均为正版授权或创作者原创。</p>
+        <p>内容生态的稳定性，来自一套被反复打磨的机制。每一条投稿都会经过基础审核、画质评估与社区规范三重检查；入选焦点内容的作品会获得官方推荐位与流量扶持；参与专题企划的创作者则会得到编辑一对一的选题建议与剪辑反馈。我们把它称为“陪跑”：不替创作者决定拍什么，但在他决定之后，尽可能让作品被更多人看见。这也是我们理解的“用户至上”——不是迎合，而是把每一次观看、每一条评论都当作真实的反馈来处理。</p>
+
+        <h3>为什么是“溏心”：一种半熟的生活态度</h3>
+        <p>“溏心”原本形容煮到半熟的蛋黄，外面凝固，里面仍是流动的。我们喜欢这个状态，因为它很像大多数人真实的生活：表面看是稳定的日程和重复的工作，里面却始终保留着一点没有完全定型的部分。溏心vlog视频希望记录的，正是这一点流动的部分。它可能是一次临时决定的独自旅行，可能是深夜厨房里突然想尝试的新菜，也可能是某个瞬间决定重新开始的勇气。我们的品牌主张是“把日子拍成可以回温的影像”，回温不是怀旧，而是让那些被忽略的片刻重新获得温度。</p>
+        <p>这种态度也直接影响了平台的选片标准。我们不追求极致的画面技巧，但要求创作者对拍摄对象有真实的兴趣；我们不排斥粗糙的手持镜头，但希望剪辑是有意识的；我们鼓励创新与多元表达，也坚持基本的社区规范与内容品质。行业领先从来不是靠数量堆出来的，而是靠一批又一批值得反复播放的作品慢慢积累口碑。</p>
+
+        <h3>社区、创作者与可持续的陪伴</h3>
+        <p>溏心vlog视频的社区氛围，是我们在运营中最在意也最小心维护的部分。评论区默认开放，但恶意攻击、人身攻击与搬运抄袭会被快速处理；新人创作者发布的第一条视频会获得官方账号的欢迎留言；每月一次的“创作挑战”不设高门槛，只给一个具体的题目，比如“拍下你家窗外的十分钟”，让更多人敢于按下录制键。我们相信，社区的活力不是靠活动和奖励撑起来的，而是靠一件件被认真对待的小事。</p>
+        <p>面向未来，我们会继续深耕生活记录这一垂直领域，把专题企划做得更扎实，把创作者扶持做得更具体，把播放体验做得更稳定。我们也会持续开放企业合作与品牌共创的通道，让优质的商业内容与真实的个人表达在同一个平台里共存。如果你也习惯用镜头留住生活的边角，欢迎来到溏心vlog视频，这里有一个位置留给你。</p>
+      </div>
+
+      <aside class="tx-deep-aside">
+        <div class="tx-aside-card">
+          <h4>平台核心数据</h4>
+          <div class="tx-aside-num"><span>累计播放量</span><b>1,286 万</b></div>
+          <div class="tx-aside-num"><span>入驻创作者</span><b>3,420 位</b></div>
+          <div class="tx-aside-num"><span>原创视频总数</span><b>26,180 条</b></div>
+          <div class="tx-aside-num"><span>用户好评率</span><b>98.2%</b></div>
+          <div class="tx-aside-num"><span>专题企划</span><b>17 个</b></div>
+        </div>
+        <div class="tx-aside-card">
+          <h4>品牌关键词</h4>
+          <div class="tx-tagrow">
+            <span class="tx-tag">官方网站</span><span class="tx-tag">原创</span><span class="tx-tag">高清</span>
+            <span class="tx-tag">社区</span><span class="tx-tag">创作者</span><span class="tx-tag">内容生态</span>
+            <span class="tx-tag">真实</span><span class="tx-tag">陪伴</span>
+          </div>
+        </div>
+        <div class="tx-aside-card">
+          <h4>编辑手记</h4>
+          <p class="tx-aside-quote">“我们不想拍那种看完就忘的视频。哪怕只有三分钟，也希望它在某个疲惫的晚上，能让人重新愿意去做一顿饭。”</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- S5 创作者矩阵 -->
+  <section class="tx-section tx-section-alt" id="tx-authors">
+    <div class="tx-wrap">
+      <div class="tx-sec-head">
+        <span class="tx-eyebrow">Creators</span>
+        <h2>溏心vlog视频创作者矩阵</h2>
+        <p>他们是这个社区最稳定的部分。有人拍厨房，有人拍街道，有人只拍窗外的光。以下六位是本期重点推荐的创作者，全部经过官方认证。</p>
+      </div>
+      <div class="tx-author-grid">
+        <article class="tx-author-card">
+          <div class="tx-author-head">
+            <span class="tx-avatar" style="background:#e8590c">暖</span>
+            <div>
+              <h3>暖锅小满</h3>
+              <span class="tx-author-field">擅长：美食烹饪 · 一人食记录</span>
+            </div>
+          </div>
+          <p>在出租屋厨房拍了三年饭，擅长把普通食材拍出温度。坚持每条视频只用一个固定机位，认为剪辑的最高境界是让观众忘记剪辑存在。最近在筹备冬日餐桌专题的个人番外篇。</p>
+          <div class="tx-author-stats"><span>作品 <b>186</b></span><span>粉丝 <b>42.6万</b></span><span>获赞 <b>310万</b></span></div>
+          <button class="tx-btn-ghost" data-open-author="暖锅小满|美食烹饪 · 一人食记录|在出租屋厨房拍了三年饭，擅长把普通食材拍出温度。坚持每条视频只用一个固定机位，认为剪辑的最高境界是让观众忘记剪辑存在。最近在筹备冬日餐桌专题的个人番外篇。">查看作者档案</button>
+        </article>
+
+        <article class="tx-author-card">
+          <div class="tx-author-head">
+            <span class="tx-avatar" style="background:#1c7ed6">野</span>
+            <div>
+              <h3>野格路书</h3>
+              <span class="tx-author-field">擅长：城市探索 · 步行影像</span>
+            </div>
+          </div>
+          <p>前地理专业学生，现全职拍城市。随身只带一台小相机和一双走不坏的鞋，擅长用环境声替代旁白。相信每条街都有自己的节奏，创作者要做的只是跟上去，别打断它。</p>
+          <div class="tx-author-stats"><span>作品 <b>94</b></span><span>粉丝 <b>28.3万</b></span><span>获赞 <b>176万</b></span></div>
+          <button class="tx-btn-ghost" data-open-author="野格路书|城市探索 · 步行影像|前地理专业学生，现全职拍城市。随身只带一台小相机和一双走不坏的鞋，擅长用环境声替代旁白。相信每条街都有自己的节奏，创作者要做的只是跟上去，别打断它。">查看作者档案</button>
+        </article>
+
+        <article class="tx-author-card">
+          <div class="tx-author-head">
+            <span class="tx-avatar" style="background:#6b8e23">栖</span>
+            <div>
+              <h3>栖栖不加班</h3>
+              <span class="tx-author-field">擅长：家居收纳 · 小空间改造</span>
+            </div>
+          </div>
+          <p>十平米卧室的长期住户，也是“低成本改造”的实践者。所有改造方案都先在自己家试一遍，失败的部分也照样剪进视频。她说，比起好看的家，更想记录一个人慢慢把日子理顺的过程。</p>
+          <div class="tx-author-stats"><span>作品 <b>128</b></span><span>粉丝 <b>21.7万</b></span><span>获赞 <b>142万</b></span></div>
+          <button class="tx-btn-ghost" data-open-author="栖栖不加班|家居收纳 · 小空间改造|十平米卧室的长期住户，也是低成本改造的实践者。所有改造方案都先在自己家试一遍，失败的部分也照样剪进视频。她说，比起好看的家，更想记录一个人慢慢把日子理顺的过程。">查看作者档案</button>
+        </article>
+
+        <article class="tx-author-card">
+          <div class="tx-author-head">
+            <span class="tx-avatar" style="background:#ae3ec9">南</span>
+            <div>
+              <h3>南窗記</h3>
+              <span class="tx-author-field">擅长：情感故事 · 治愈影像</span>
+            </div>
+          </div>
+          <p>习惯在深夜剪片，作品大多关于告别和重新开始。镜头语言安静，配乐极少，常常整条视频只有呼吸声和窗外的车流。她认为真正的情感不需要被解释，只需要被允许存在。</p>
+          <div class="tx-author-stats"><span>作品 <b>76</b></span><span>粉丝 <b>19.4万</b></span><span>获赞 <b>128万</b></span></div>
+          <button class="tx-btn-ghost" data-open-author="南窗記|情感故事 · 治愈影像|习惯在深夜剪片，作品大多关于告别和重新开始。镜头语言安静，配乐极少，常常整条视频只有呼吸声和窗外的车流。她认为真正的情感不需要被解释，只需要被允许存在。">查看作者档案</button>
+        </article>
+
+        <article class="tx-author-card">
+          <div class="tx-author-head">
+            <span class="tx-avatar" style="background:#2f9e44">帧</span>
+            <div>
+              <h3>帧率老周</h3>
+              <span class="tx-author-field">擅长：科技前沿 · 设备深度测评</span>
+            </div>
+          </div>
+          <p>做过十年影视后期，现在把经验拆成普通人看得懂的测评。不堆参数，只讲“这个差别你在什么场景下真的看得见”。被社区称为最不像测评的测评博主，也是最常被收藏的技术向创作者。</p>
+          <div class="tx-author-stats"><span>作品 <b>212</b></span><span>粉丝 <b>36.9万</b></span><span>获赞 <b>264万</b></span></div>
+          <button class="tx-btn-ghost" data-open-author="帧率老周|科技前沿 · 设备深度测评|做过十年影视后期，现在把经验拆成普通人看得懂的测评。不堆参数，只讲这个差别你在什么场景下真的看得见。被社区称为最不像测评的测评博主，也是最常被收藏的技术向创作者。">查看作者档案</button>
+        </article>
+
+        <article class="tx-author-card">
+          <div class="tx-author-head">
+            <span class="tx-avatar" style="background:#f08c00">猫</span>
+            <div>
+              <h3>猫在等我</h3>
+              <span class="tx-author-field">擅长：萌宠日常 · 陪伴记录</span>
+            </div>
+          </div>
+          <p>用固定机位记录一只猫的日常，三年没有断更。视频里很少出现自己的声音，但每条结尾都会留三秒黑屏，写一句当天想说的话。她说这是给自己和猫共同的日记，只是顺便被很多人看见了。</p>
+          <div class="tx-author-stats"><span>作品 <b>340</b></span><span>粉丝 <b>15.8万</b></span><span>获赞 <b>96万</b></span></div>
+          <button class="tx-btn-ghost" data-open-author="猫在等我|萌宠日常 · 陪伴记录|用固定机位记录一只猫的日常，三年没有断更。视频里很少出现自己的声音，但每条结尾都会留三秒黑屏，写一句当天想说的话。她说这是给自己和猫共同的日记，只是顺便被很多人看见了。">查看作者档案</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S6 用户评价 -->
+  <section class="tx-section" id="tx-reviews">
+    <div class="tx-wrap">
+      <div class="tx-sec-head">
+        <span class="tx-eyebrow">Voices</span>
+        <h2>来自溏心vlog视频社区的真实评价</h2>
+        <p>我们保留每一条具体、有细节的反馈，它们是这个平台持续运营下去最重要的参照。以下内容来自用户授权展示，均已获得分享同意。</p>
+      </div>
+      <div class="tx-review-grid">
+        <article class="tx-review">
+          <p>连续看了三晚的《城市慢行》，第一次发现自己住了五年的地方还有那么多没走过的巷子。视频里的环境声做得特别好，戴着耳机看完整个人会安静下来，比白噪音管用。</p>
+          <div class="tx-review-foot"><span class="tx-avatar" style="background:#1c7ed6;width:26px;height:26px;font-size:12px">林</span><b>林间小径</b><span class="tx-stars">★★★★★</span><span>观看 2 年</span></div>
+        </article>
+        <article class="tx-review">
+          <p>作为创作者，最直接的感受是有人认真看我的片子。第一次投稿就收到了编辑的具体建议，不是模板回复，是逐段写了三分多钟的修改意见。后来那条视频进了专题，播放量翻了十倍。</p>
+          <div class="tx-review-foot"><span class="tx-avatar" style="background:#6b8e23;width:26px;height:26px;font-size:12px">阿</span><b>阿禾的下午</b><span class="tx-stars">★★★★★</span><span>创作者 1 年</span></div>
+        </article>
+        <article class="tx-review">
+          <p>画质确实稳定，4K 原片下载很方便，做学习资料的时候直接截帧也很清楚。唯一希望是搜索能再细一点，比如按拍摄地点筛选，我经常想找某个城市的影像。</p>
+          <div class="tx-review-foot"><span class="tx-avatar" style="background:#e8590c;width:26px;height:26px;font-size:12px">周</span><b>周末做笔记</b><span class="tx-stars">★★★★☆</span><span>观看 1 年</span></div>
+        </article>
+        <article class="tx-review">
+          <p>最喜欢的是这里没什么夸张封面。看多了那种“三分钟改变人生”的标题，来这里反而松一口气。视频节奏慢，但信息是实的，看完有收获，不会觉得被骗了时间。</p>
+          <div class="tx-review-foot"><span class="tx-avatar" style="background:#ae3ec9;width:26px;height:26px;font-size:12px">宁</span><b>宁宁的周末</b><span class="tx-stars">★★★★★</span><span>观看 3 年</span></div>
+        </article>
+        <article class="tx-review">
+          <p>跟着美食专题学做了好几道菜，步骤讲得清楚，失败的部分也没剪掉，这点很打动人。唯一的小意见是有的视频时长偏长，希望能有个精简版入口。</p>
+          <div class="tx-review-foot"><span class="tx-avatar" style="background:#2f9e44;width:26px;height:26px;font-size:12px">赵</span><b>赵小盐</b><span class="tx-stars">★★★★☆</span><span>观看 8 个月</span></div>
+        </article>
+        <article class="tx-review">
+          <p>在评论区认识了一个同城的创作者，后来一起拍了条短片投到“手作一小时”的征集里，居然入选了。这种从观众变成参与者的体验，在其他平台很少遇到。</p>
+          <div class="tx-review-foot"><span class="tx-avatar" style="background:#c76a00;width:26px;height:26px;font-size:12px">陈</span><b>陈皮不加糖</b><span class="tx-stars">★★★★★</span><span>观看 1 年半</span></div>
+        </article>
+        <article class="tx-review">
+          <p>夜里失眠的时候会打开这个站，挑一条十几分钟的视频慢慢看。没有什么刺激的画面，但就是能让人放松下来，像是有人在旁边陪你待着。</p>
+          <div class="tx-review-foot"><span class="tx-avatar" style="background:#1c7ed6;width:26px;height:26px;font-size:12px">许</span><b>许一半</b><span class="tx-stars">★★★★★</span><span>观看 2 年</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S3 新闻 + S7 合作 & FAQ -->
+  <section class="tx-section tx-section-alt" id="tx-aux">
+    <div class="tx-wrap">
+      <div class="tx-sec-head">
+        <span class="tx-eyebrow">Updates</span>
+        <h2>企业动态 · 官方发布与社区公告</h2>
+        <p>关于溏心vlog视频的每一次更新、每一次活动与每一次调整，都会在这里以官方名义发布，确保信息可追溯、内容可查证。</p>
+      </div>
+      <div class="tx-aux-grid">
+        <ul class="tx-news">
+          <li>
+            <span class="tx-date">11/22<br>2026</span>
+            <div>
+              <h4>「冬日餐桌」专题第一季正式开播</h4>
+              <p>六位创作者、六种一人食方式，每周三、周六更新。专题页同步上线投稿入口，欢迎提交你的冬日厨房记录。</p>
+            </div>
+          </li>
+          <li>
+            <span class="tx-date">11/20<br>2026</span>
+            <div>
+              <h4>创作者扶持计划第二期开放报名</h4>
+              <p>本期提供 200 个名额，包含流量扶持、剪辑指导与专题优先入选资格。报名截止时间为 12 月 10 日。</p>
+            </div>
+          </li>
+          <li>
+            <span class="tx-date">11/18<br>2026</span>
+            <div>
+              <h4>高清播放器完成版本升级</h4>
+              <p>新增 4K 原片下载与逐帧查看功能，移动端加载速度提升约 35%，播放体验更加稳定。</p>
+            </div>
+          </li>
+          <li>
+            <span class="tx-date">11/15<br>2026</span>
+            <div>
+              <h4>官方周边「暖光手账」开启预售</h4>
+              <p>与社区创作者联合设计，内含 48 页影像记录模板。会员可享专属折扣，首批限量 500 本。</p>
+            </div>
+          </li>
+        </ul>
+
+        <div>
+          <h3 style="font-size:17px;font-weight:800;margin-bottom:14px">合作品牌与伙伴</h3>
+          <div class="tx-partners">
+            <div class="tx-partner"><i style="background:#e8590c">光</i><div>光影器材社<span>设备支持伙伴</span></div></div>
+            <div class="tx-partner"><i style="background:#2f9e44">田</i><div>田间直选<span>食材内容共创</span></div></div>
+            <div class="tx-partner"><i style="background:#1c7ed6">城</i><div>城市行走协会<span>城市影像联合企划</span></div></div>
+            <div class="tx-partner"><i style="background:#ae3ec9">本</i><div>本白设计<span>视觉与空间顾问</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:44px">
+        <h3 style="font-size:19px;font-weight:900;margin-bottom:16px">常见问题</h3>
+        <div class="tx-faq">
+          <details open>
+            <summary>如何向溏心vlog视频投稿？</summary>
+            <p>点击页面任意位置的“投稿入口”，填写作品链接、简介与联系方式即可提交。也可以在创作者中心直接上传高清原片。我们会在 3 个工作日内完成初审并反馈结果。</p>
+          </details>
+          <details>
+            <summary>投稿对设备和画质有什么要求？</summary>
+            <p>建议 1080P 及以上，手机拍摄同样欢迎。我们更看重内容本身与拍摄动机，不要求专业设备。若通过初审，编辑会协助你优化画质与字幕规范。</p>
+          </details>
+          <details>
+            <summary>入驻创作者可以保留作品版权吗？</summary>
+            <p>可以。创作者保留完整著作权，溏心vlog视频仅在授权范围内进行展示、推荐与专题收录。所有内容均为正版授权，平台不会未经许可二次分发。</p>
+          </details>
+          <details>
+            <summary>专题企划如何参与？</summary>
+            <p>每个专题页下方都设有参与入口，按当期主题提交作品即可。部分专题会设置名额限制，入选结果将在专题页与官方公告中同步公示。</p>
+          </details>
+          <details>
+            <summary>平台内容会做审核吗？</summary>
+            <p>会。所有内容需经过基础审核、画质评估与社区规范检查三重流程。涉及搬运、抄袭或不当内容将被退回，并记录在创作者信用档案中。</p>
+          </details>
+          <details>
+            <summary>是否支持企业或品牌合作？</summary>
+            <p>支持。我们开放品牌共创、专题植入与影像定制三类合作方式，坚持内容与商业边界清晰。可联系官方合作邮箱获取合作说明文档。</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA 投稿 -->
+  <section class="tx-section" id="tx-join">
+    <div class="tx-wrap">
+      <div class="tx-cta">
+        <div>
+          <h2>你的日常，也值得被认真记录</h2>
+          <p>溏心vlog视频持续开放创作者投稿与专题报名。无论你只有一部手机，还是已经拍了三年，这里都有一个位置留给你。上传你的作品，让它加入这个仍在生长的内容社区。</p>
+        </div>
+        <div class="tx-cta-btns">
+          <button class="tx-btn-light" data-open-modal="submit">上传作品</button>
+          <button class="tx-btn-line" data-open-modal="share">分享本页</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="tx-footer">
+  <div class="tx-wrap">
+    <div class="tx-footer-grid">
+      <div>
+        <div class="tx-footer-brand">
+          <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="16" fill="#f6b93b"/>
+            <ellipse cx="32" cy="35" rx="17" ry="13" fill="#fff6e5"/>
+            <ellipse cx="32" cy="35" rx="9" ry="8" fill="#f08c00"/>
+            <circle cx="18" cy="20" r="4" fill="#fff6e5"/>
+            <path d="M32 8l4 7h-8z" fill="#e8590c"/>
+          </svg>
+          <span class="tx-brand-name">溏心vlog视频</span>
+        </div>
+        <p>溏心vlog视频官方网站 · 版权所有<br>专注真实生活影像的原创视频品牌与内容平台，持续运营中。<br>我们坚持正版、高清、原创，为创作者与企业搭建值得信赖的内容生态。</p>
+      </div>
+      <div>
+        <h4>内容</h4>
+        <ul>
+          <li><a href="#tx-focus">本期焦点</a></li>
+          <li><a href="#tx-topics">专题企划</a></li>
+          <li><a href="#tx-authors">创作者矩阵</a></li>
+          <li><a href="#tx-reviews">用户评价</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于</h4>
+        <ul>
+          <li><a href="#tx-parse">品牌故事</a></li>
+          <li><a href="#tx-aux">企业动态</a></li>
+          <li><a href="#tx-aux">常见问题</a></li>
+          <li><a href="#tx-join">投稿合作</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>联系</h4>
+        <ul>
+          <li><a href="#tx-join">商务合作：hello@tangxin-vlog.com</a></li>
+          <li><a href="#tx-join">创作者支持：creator@tangxin-vlog.com</a></li>
+          <li><a href="#tx-join">工作日 10:00 – 19:00</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tx-footer-bottom">
+      <span>© 2026 溏心vlog视频 版权所有</span>
+      <span>沪ICP备2026001122号-1</span>
+      <span>增值电信业务经营许可证 沪B2-20261488</span>
+      <span>官方网站 · 官方发布 · 持续运营</span>
+    </div>
+  </div>
+</footer>
+
+<button class="tx-top" id="tx-top-btn" aria-label="回到顶部">↑</button>
+<div class="tx-toast" id="tx-toast" role="status" aria-live="polite"></div>
+
+<div class="tx-modal" id="tx-modal-submit" aria-hidden="true">
+  <div class="tx-modal-card" role="dialog" aria-modal="true" aria-labelledby="tx-modal-submit-title">
+    <button class="tx-modal-close" data-close-modal aria-label="关闭">×</button>
+    <h3 id="tx-modal-submit-title">投稿到溏心vlog视频</h3>
+    <p class="tx-modal-sub">请填写作品基本信息，官方编辑将在 3 个工作日内完成初审并回复。</p>
+    <label for="tx-sub-name">创作者昵称</label>
+    <input id="tx-sub-name" type="text" placeholder="例如：暖锅小满">
+    <label for="tx-sub-link">作品链接</label>
+    <input id="tx-sub-link" type="text" placeholder="填写可访问的作品地址">
+    <label for="tx-sub-desc">一句话简介</label>
+    <textarea id="tx-sub-desc" rows="3" placeholder="这条视频拍的是什么，用了多久拍摄"></textarea>
+    <button class="tx-btn-primary" id="tx-sub-submit">提交作品</button>
+  </div>
+</div>
+
+<div class="tx-modal" id="tx-modal-share" aria-hidden="true">
+  <div class="tx-modal-card" role="dialog" aria-modal="true" aria-labelledby="tx-modal-share-title">
+    <button class="tx-modal-close" data-close-modal aria-label="关闭">×</button>
+    <h3 id="tx-modal-share-title">分享溏心vlog视频</h3>
+    <p class="tx-modal-sub">把这份冬日影像清单转给也许会喜欢的人。</p>
+    <div class="tx-share-row">
+      <button data-share="微信">微信</button>
+      <button data-share="微博">微博</button>
+      <button data-share="QQ">QQ</button>
+    </div>
+    <button class="tx-btn-primary" id="tx-copy-page" style="margin-top:16px">复制页面链接</button>
+  </div>
+</div>
+
+<div class="tx-modal" id="tx-modal-author" aria-hidden="true">
+  <div class="tx-modal-card" role="dialog" aria-modal="true" aria-labelledby="tx-modal-author-title">
+    <button class="tx-modal-close" data-close-modal aria-label="关闭">×</button>
+    <h3 id="tx-modal-author-title">创作者档案</h3>
+    <p class="tx-modal-sub" id="tx-modal-author-field">官方认证创作者</p>
+    <p id="tx-modal-author-bio" style="font-size:14px;color:#584732;line-height:1.9"></p>
+    <button class="tx-btn-primary" data-close-modal>知道了</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ============ 移动端导航 ============ */
+  var burger = document.getElementById('tx-burger');
+  var nav = document.getElementById('tx-nav');
+  if (burger && nav) {
+    burger.addEventListener('click', function(){
+      var open = nav.classList.toggle('tx-open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.setAttribute('aria-label', open ? '收起导航菜单' : '展开导航菜单');
+    });
+    nav.addEventListener('click', function(e){
+      if (e.target.tagName === 'A') {
+        nav.classList.remove('tx-open');
+        burger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  /* ============ Toast ============ */
+  var toast = document.getElementById('tx-toast');
+  var toastTimer = null;
+  function showToast(msg){
+    if (!toast) return;
+    toast.textContent = msg;
+    toast.classList.add('tx-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('tx-show'); }, 2200);
+  }
+
+  /* ============ 搜索反馈 ============ */
+  var searchInput = document.getElementById('tx-search-input');
+  var searchBtn = document.getElementById('tx-search-btn');
+  var searchFeedback = document.getElementById('tx-search-feedback');
+  var searchData = [
+    { k: ['冬日','餐桌','美食','溏心蛋','做饭'], tip: '找到「冬日餐桌」专题及 6 条一人食视频' },
+    { k: ['城市','街道','步行','探索'], tip: '找到「城市慢行」专题及 4 条步行影像' },
+    { k: ['手作','手账','改造','收纳'], tip: '找到「手作一小时」报名信息与 5 条相关视频' },
+    { k: ['创作者','作者','投稿','入驻'], tip: '找到创作者扶持计划第二期报名入口' },
+    { k: ['相机','设备','测评','4K'], tip: '找到设备测评 3 条与高清播放说明' },
+    { k: ['猫','宠物','萌宠'], tip: '找到「猫在等我」系列共 340 条日常记录' }
+  ];
+  function runSearch(){
+    if (!searchInput || !searchFeedback) return;
+    var q = searchInput.value.trim();
+    if (!q) {
+      searchFeedback.textContent = '试试输入：冬日餐桌、城市慢行、创作者、相机';
+      searchFeedback.classList.add('tx-on');
+      return;
+    }
+    var hit = searchData.filter(function(item){
+      return item.k.some(function(k){ return q.indexOf(k) !== -1 || k.indexOf(q) !== -1; });
+    });
+    if (hit.length) {
+      searchFeedback.textContent = '「' + q + '」' + hit[0].tip;
+    } else {
+      searchFeedback.textContent = '暂未直接匹配「' + q + '」，可尝试：冬日餐桌 / 城市慢行 / 手作一小时';
+    }
+    searchFeedback.classList.add('tx-on');
+  }
+  if (searchBtn) searchBtn.addEventListener('click', runSearch);
+  if (searchInput) {
+    searchInput.addEventListener('keydown', function(e){
+      if (e.key === 'Enter') { e.preventDefault(); runSearch(); }
+    });
+    searchInput.addEventListener('input', function(){
+      if (!searchInput.value.trim() && searchFeedback) searchFeedback.classList.remove('tx-on');
+    });
+  }
+
+  /* ============ 点赞 +1/-1 ============ */
+  document.querySelectorAll('.tx-like').forEach(function(btn){
+    var base = parseInt(btn.getAttribute('data-base') || '0', 10);
+    var count = btn.querySelector('.tx-count');
+    var label = btn.querySelector('span');
+    var liked = false;
+    btn.addEventListener('click', function(){
+      liked = !liked;
+      btn.classList.toggle('tx-liked', liked);
+      if (count) count.textContent = (base + (liked ? 1 : 0)).toLocaleString('en-US');
+      if (label) label.textContent = liked ? '♥ 已赞' : '♡ 点赞';
+    });
+  });
+
+  /* ============ 收藏切换 ============ */
+  document.querySelectorAll('.tx-save').forEach(function(btn){
+    var saved = false;
+    btn.addEventListener('click', function(){
+      saved = !saved;
+      btn.classList.toggle('tx-saved', saved);
+      btn.textContent = saved ? '★ 已收藏' : '☆ 收藏';
+      showToast(saved ? '已加入你的收藏夹' : '已取消收藏');
+    });
+  });
+
+  /* ============ 复制链接 ============ */
+  function copyText(text, okMsg){
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function(){
+        showToast(okMsg);
+      }).catch(function(){
+        showToast('复制失败，请手动选择地址栏复制');
+      });
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); showToast(okMsg); }
+      catch(e){ showToast('复制失败，请手动选择地址栏复制'); }
+      document.body.removeChild(ta);
+    }
+  }
+  document.querySelectorAll('.tx-copy').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      copyText(document.title, '链接已复制，可以分享给朋友了');
+    });
+  });
+
+  /* ============ 弹窗 ============ */
+  var modals = {
+    submit: document.getElementById('tx-modal-submit'),
+    share: document.getElementById('tx-modal-share'),
+    author: document.getElementById('tx-modal-author')
+  };
+  function openModal(name){
+    var m = modals[name];
+    if (!m) return;
+    m.classList.add('tx-open');
+    m.setAttribute('aria-hidden', 'false');
+    var focusable = m.querySelector('input, textarea, button');
+    if (focusable) setTimeout(function(){ focusable.focus(); }, 60);
+  }
+  function closeModal(m){
+    m.classList.remove('tx-open');
+    m.setAttribute('aria-hidden', 'true');
+  }
+  document.querySelectorAll('[data-open-modal]').forEach(function(btn){
+    btn.addEventListener('click', function(){ openModal(btn.getAttribute('data-open-modal')); });
+  });
+  document.querySelectorAll('[data-close-modal]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var m = btn.closest('.tx-modal');
+      if (m) closeModal(m);
+    });
+  });
+  Object.keys(modals).forEach(function(key){
+    var m = modals[key];
+    if (!m) return;
+    m.addEventListener('click', function(e){ if (e.target === m) closeModal(m); });
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') {
+      Object.keys(modals).forEach(function(key){
+        var m = modals[key];
+        if (m && m.classList.contains('tx-open')) closeModal(m);
+      });
+    }
+  });
+
+  /* ============ 作者弹窗 ============ */
+  var authorTitle = document.getElementById('tx-modal-author-title');
+  var authorField = document.getElementById('tx-modal-author-field');
+  var authorBio = document.getElementById('tx-modal-author-bio');
+  document.querySelectorAll('[data-open-author]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var parts = (btn.getAttribute('data-open-author') || '').split('|');
+      if (authorTitle) authorTitle.textContent = parts[0] || '创作者档案';
+      if (authorField) authorField.textContent = parts[1] || '官方认证创作者';
+      if (authorBio) authorBio.textContent = parts[2] || '';
+      openModal('author');
+    });
+  });
+
+  /* ============ 分享 ============ */
+  document.querySelectorAll('[data-share]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      showToast('已生成' + btn.getAttribute('data-share') + '分享卡片，可粘贴发送');
+    });
+  });
+  var copyPage = document.getElementById('tx-copy-page');
+  if (copyPage) {
+    copyPage.addEventListener('click', function(){
+      copyText(document.title, '页面信息已复制，感谢你的分享');
+    });
+  }
+
+  /* ============ 投稿提交 ============ */
+  var subSubmit = document.getElementById('tx-sub-submit');
+  if (subSubmit) {
+    subSubmit.addEventListener('click', function(){
+      var name = document.getElementById('tx-sub-name');
+      var link = document.getElementById('tx-sub-link');
+      if (name && !name.value.trim()) { showToast('请填写创作者昵称'); name.focus(); return; }
+      if (link && !link.value.trim()) { showToast('请填写作品链接'); link.focus(); return; }
+      showToast('投稿已提交，官方编辑将在 3 个工作日内回复');
+      var m = document.getElementById('tx-modal-submit');
+      if (m) closeModal(m);
+      if (name) name.value = '';
+      if (link) link.value = '';
+      var desc = document.getElementById('tx-sub-desc');
+      if (desc) desc.value = '';
+    });
+  }
+
+  /* ============ 回到顶部 ============ */
+  var topBtn = document.getElementById('tx-top-btn');
+  if (topBtn) {
+    window.addEventListener('scroll', function(){
+      if (window.scrollY > 480) topBtn.classList.add('tx-show');
+      else topBtn.classList.remove('tx-show');
+    }, { passive: true });
+    topBtn.addEventListener('click', function(){
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  /* ============ 关闭搜索建议 ============ */
+  document.addEventListener('click', function(e){
+    if (searchFeedback && searchFeedback.classList.contains('tx-on')) {
+      var box = searchInput ? searchInput.closest('.tx-search') : null;
+      if (box && !box.contains(e.target)) searchFeedback.classList.remove('tx-on');
+    }
+  });
+})();
+</script>
+</body>
+                                                                                                                                                                                                            </html>
